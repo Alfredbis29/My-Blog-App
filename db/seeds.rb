@@ -11,7 +11,21 @@
 first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', posts_counter: 0)
 second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
 
-first_post = first_user.posts.create(title: 'Education', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
-first_post = first_user.posts.create(title: 'Rich Live', text: 'How to become rich', comments_counter: 0, likes_counter: 0)
-first_post = second_user.posts.create(title: 'Sport', text: 'This is my first post about sport', comments_counter: 0, likes_counter: 0)
-first_post = second_user.posts.create(title: 'Economy', text: 'We alway need to take control of', comments_counter: 0, likes_counter: 0)
+first_post = Post.create(title: 'Education', text: 'This is my first post', comments_counter: 0, likes_counter: 0, author_id: first_user.id)
+first_post = Post.create(title: 'Rich Live', text: 'How to become rich', comments_counter: 0, likes_counter: 0, author_id: first_user.id)
+second_user = Post.create(title: 'Sport', text: 'This is my first post about sport', comments_counter: 0, likes_counter: 0, author_id: first_user.id)
+second_user = Post.create(title: 'Economy', text: 'We alway need to take control of', comments_counter: 0, likes_counter: 0, author_id: second_user.id)
+
+
+first_post.comments.create!(text: 'Well Done :clap::clap::clap:', author: first_user)
+first_post.comments.create!(text: 'Great post man :clap::clap::clap:', author: first_user)
+first_post.comments.create!(text: 'I like this post :heavy_check_mark::heavy_check_mark:', author: second_user)
+first_post.comments.create!(text: 'Well Done :clap::clap::clap:', author: first_user)
+first_post.comments.create!(text: 'Great post man :clap::clap::clap:', author: first_user)
+second_post.comments.create!(text: 'I like this post :heavy_check_mark::heavy_check_mark:', author: second_user)
+first_post.comments.create!(text: 'Well Done :clap::clap::clap:', author: first_user)
+first_post.comments.create!(text: 'Great post man :clap::clap::clap:', author: first_user)
+second_post.comments.create!(text: 'I like this post :heavy_check_mark::heavy_check_mark:', author: second_user)
+first_post.comments.create!(text: 'Well Done :clap::clap::clap:', author: first_user)
+first_post.comments.create!(text: 'Great post man :clap::clap::clap:', author: first_user)
+second_post.comments.create!(text: 'I like this post :heavy_check_mark::heavy_check_mark:', author: second_user
