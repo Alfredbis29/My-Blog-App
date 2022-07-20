@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<section class="container">
 
-<h1>Posts</h1>
+    <div class="user-box">
+        <img class="image-user" src=<%= @user.photo %> alt="user"/>
+        <div class="user-info">
+            <p class="user-name"><%= @user.name %></p>
+            <p class="user-post">Number of posts: <%= @user.posts_counter%></p>
+        </div>
+    </div>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
+    <% @posts.each do |post| %>
+        <div class="post-info">
+            <p class="post-title">Post : <%= post.title %> by <%= post.author.name %></p>
+            <p><%= post.text %></p>
+            <p class="post-text-2">Comments: <span><%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span></p>
 
-<%= link_to "New post", new_post_path %>
+        </div>
+
+    <% end %>
+
+    <div class="button-user">
+        <button class="button">
+            Pagination
+        </button>
+    </div>
+
+</section>
