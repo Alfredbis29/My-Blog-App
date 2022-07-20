@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users Controller', type: :request do
   describe 'GET /index' do
     context 'when the page is loaded' do
-      before(:example) {get '/users'}
+      before(:example) { get '/users' }
       it 'returns a 200 status code' do
         expect(response).to have_http_status(200)
       end
