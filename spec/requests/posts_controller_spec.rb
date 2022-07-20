@@ -35,4 +35,4 @@ RSpec.describe 'Users Controller', type: :request do
       end
     end
   end
- end
+end
