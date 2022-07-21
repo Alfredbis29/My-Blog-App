@@ -1,23 +1,23 @@
-*{
+* {
   margin: 0;
-  padding:0%;
-  box-sizing:border-box;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
 html {
   font-family: "roboto", serif;
 }
 
-body{
+body {
   background: #033c3264;
-  background-image:linear-gradient(to right, #4cb1a3c9, #02150296);
+  background-image: linear-gradient(to right, #4cb1a3c9, #02150296);
   font-size: 15px;
-  font-weight:normal;
+  font-weight: normal;
   line-height: 19px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-a{
+a {
   color: brown;
   text-decoration: none;
 }
@@ -34,20 +34,20 @@ a{
   font-weight: bold;
   color: blueviolet;
   text-align: left;
-  margin: 20px o;
+  margin: 20px 0;
   padding: 20px 0;
 }
 
 .user-box {
- border: 1px solid #ee2727;
-margin: 20px 20px;
-display: flex;
-align-items: center;
-justify-content: flex-start;
-background-image: linear-gradient(to left, #4cb1a3c9, #02150296);
+  border: 1px solid #ee2727;
+  margin: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: linear-gradient(to left, #4cb1a3c9, #02150296);
 }
 
-image-user {
+.image-user {
   width: 100px;
   height: 100px;
 }
@@ -71,19 +71,19 @@ image-user {
 }
 
 .user-bio {
-margin: 0 20px 20px 20px;
-text-align: right;
-font-size: 15px;
-color: #ee2727;
-font-family: Arial, Helvetica, sans-serif;
-font-weight: lighter;
-line-height: normal;
-border: 1px solid orangered;
-padding: 10px 10px;
+  margin: 0 20px 20px 20px;
+  text-align: right;
+  font-size: 15px;
+  color: #ee2727;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  line-height: normal;
+  border: 1px solid orangered;
+  padding: 10px 10px;
 }
 
 .user-post {
- padding: 0 20px;
+  padding: 0 20px;
   text-align: right;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
