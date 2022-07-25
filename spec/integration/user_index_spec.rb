@@ -33,4 +33,3 @@ RSpec.describe 'Test Index Page', type: :feature do
     end
   end
 end
-
