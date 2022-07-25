@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe 'Post show', type: :feature do
   describe 'Post' do
     before(:each) do
-      
       @first_user = User.create(name: 'Tom', photo: 'margaret.jpeg', bio: 'Teacher from Mexico.')
       @second_user = User.create(name: 'Lilly', photo: 'margaret.jpeg', bio: 'Teacher from Poland.')
 
