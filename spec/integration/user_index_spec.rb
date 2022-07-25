@@ -1,30 +1,36 @@
 require 'rails_helper'
 
-RSpec.describe 'user_index', type: :feature do
-  before(:each) do
-    visit new_user_session_path
-    fill_in 'Email', with: 'keza1@gmail.com'
-    fill_in 'Password', with: '12341234'
-    click_button 'Log in'
-  end
+RSpec.describe 'Test Index Page', type: :feature do
+  describe 'GET index' do
+    before(:each) do
+      @first_user = User.create(name: 'Mohammed', photo: 'image1.png', bio: 'bio1', posts_counter: 1)
+      @first_user.save!
+      @second_user = User.create(name: 'Ahmed', photo: 'image2.png', bio: 'bio2', posts_counter: 3)
+      @second_user.save!
+      @third_user = User.create(name: 'Marwan', photo: 'image3.png', bio: 'bio3', posts_counter: 5)
+      @third_user.save!
+    end
 
-  it 'should list all usernames ' do
-    expect(page).to have_content('keza2')
-    expect(page).to have_content('keza3')
-  end
+    it 'shows the users username' do
+      visit root_path
+      expect(page).to have_content('Mohammed')
+      expect(page).to have_content('Ahmed')
+      expect(page).to have_content('Marwan')
+    end
 
-  it 'should include All users on the page' do
-    expect(page.html).to include('All users')
-  end
+    it 'shows the users profile picture' do
+      visit root_path
+      expect(page).to have_css('img[src*="image1.png"]')
+      expect(page).to have_css('img[src*="image2.png"]')
+      expect(page).to have_css('img[src*="image3.png"]')
+    end
 
-  it 'should view a specific user post' do
-    user = User.all.first
-    expect(page).to have_content("Number of posts:#{user.postsCounter || 0}")
-  end
-
-  it 'should show aspecific user when a user card is clicked' do
-    user = User.all.first
-    first(:link, user.name).click
-    expect(page.current_path).to eql(user_path(id: user.id))
+    it 'shows the number of posts of each user' do
+      visit root_path
+      expect(page).to have_content('1')
+      expect(page).to have_content('3')
+      expect(page).to have_content('5')
+    end
   end
 end
+
