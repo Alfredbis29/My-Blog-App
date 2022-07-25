@@ -13,7 +13,7 @@ default: &default
 development:
   <<: *default
   database: blog_app_development
-  password: alfred
+  password: postgres
   username: postgres
 
 # Warning: The database defined as "test" will be erased and
@@ -22,11 +22,11 @@ development:
 test:
   <<: *default
   database: blog_app_test
-  password: alfred
+  password: postgres
   username: postgres
 
 production:
   <<: *default
   database: blog_app_production
-  password: alfred
+  password: postgres
   username: postgres
