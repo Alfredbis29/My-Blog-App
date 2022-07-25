@@ -10,35 +10,35 @@ RSpec.describe 'Users Show page', type: :feature do
     visit user_path(id: @user1.id)
   end
 
-  it 'shows the profile picture of a user' do
+  it 'should show the profile picture of a user' do
     find("img[src='https://www.example.com/image']")
   end
 
-  it 'Shows the static text' do
+  it 'should show the static text' do
     expect(page).to have_content(`#{@username1}\'s Most Recent Posts`)
   end
 
-  it 'Shows the User\s name' do
+  it 'should show the User\s name' do
     expect(page).to have_content @username1
   end
 
-  it 'shows number of user posts ' do
+  it 'should show number of user posts ' do
     expect(page).to have_content('Number of posts: 4')
   end
 
-  it 'shows number of user bio' do
+  it 'should show number of user bio' do
     expect(page).to have_content('Teacher from Kenya')
   end
 
-  it 'shows a post title' do
+  it 'should show a post title' do
     expect(page).to have_content 'Post 3'
   end
 
-  it 'shows user\s first three posts' do
+  it 'should show user\s first three posts' do
     expect(page).to have_selector(:link_or_button, 'See Post', count: 3)
   end
 
-  it 'redirects to all posts when button is clicked' do
+  it 'should redirect to all posts when we click on the button' do
     click_link 'See all posts'
     expect(page).to have_current_path(user_posts_path(@user1))
   end
