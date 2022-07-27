@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ffi/ffi.git
+  revision: 07a1c0c028942f786b80f48206795a8fa6b0e8f5
+  submodules: true
+  specs:
+    ffi (1.15.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -127,6 +134,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.7-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.7-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
@@ -255,6 +264,7 @@ DEPENDENCIES
   bootsnap
   bullet
   capybara
+  ffi!
   importmap-rails
   jbuilder
   pg
